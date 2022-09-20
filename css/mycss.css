@@ -1,0 +1,29 @@
+li {
+    padding: 10px;
+}
+menu {
+    display: flex;
+    list-style: none;
+}
+
+
+li[id*="home"]::before {
+    content: "\f015";
+
+}
+
+
+li::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    padding-right: 5px;
+   
+}
+
+.visible {
+    display: block;
+}
+
+.oculto {
+    display: none;
+}
