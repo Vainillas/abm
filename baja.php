@@ -1,21 +1,13 @@
-<a href="index.php">home</a>
 <?php
 
-require "oo/db.php";
+require "persistance/equipos_repository.php";
 
 $id =  $_GET['id'];
 
-
-$db = new Db();
-
-$db->conectar();
-
-$link = mysqli_connect('localhost','root','root','proyecto');
-
-$consulta = "DELETE FROM usuarios WHERE id=$id";
-
-$resultado = mysqli_query($link, $consulta);
-echo $resultado;
-echo "CHAUUUUUU $id";
-?>
-
+$repo = new equipos_repository();
+$repo->eliminar($id);
+$message = "El equipo con id $id ha sido eliminado.";
+echo "<SCRIPT>
+alert('$message')
+window.location.replace('alta_formulario.php');
+</SCRIPT>";
